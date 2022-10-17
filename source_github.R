@@ -1,5 +1,5 @@
 library(dplyr)
-
+library(httr)
 
 source_github <- function(repo, branch = "main", file, # nolint
                           auth = Sys.getenv("GITHUB_PAT")) {
@@ -25,7 +25,7 @@ source_github <- function(repo, branch = "main", file, # nolint
   #   add_headers(Accept = header_accept, Authorization = paste0("token ", auth))
   # ))
   
-  r <- GET(url = url, 
+  r <- httr::GET(url = url, 
            config = authenticate(auth, ""))
   
   
