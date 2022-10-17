@@ -1,7 +1,7 @@
 library(dplyr)
 
 
-source_github <- function(repo, branch = "master", file, # nolint
+source_github <- function(repo, branch = "main", file, # nolint
                           auth = Sys.getenv("GITHUB_PAT")) {
   stopifnot(
     all(sapply(c(repo, branch, file), is.character)),
